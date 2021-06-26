@@ -1,10 +1,8 @@
-pipeline {
+node {
     
-    stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
-            }
-        }
-    }
+    // on linux / mac
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    
+    
+    sh 'npm --version'
 }
